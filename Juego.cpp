@@ -4,3 +4,6 @@ Juego::Juego() {
 	
 }
 
+void Juego::start() {
+	
+}

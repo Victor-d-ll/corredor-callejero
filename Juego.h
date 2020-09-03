@@ -5,6 +5,7 @@ class Juego {
 public:
 	Juego();
 private:
+	void start();
 };
 
 #endif
