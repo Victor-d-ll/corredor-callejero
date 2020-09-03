@@ -4,8 +4,10 @@
 class Juego {
 public:
 	Juego();
-private:
 	void start();
+	
+private:
+	
 };
 
 #endif
