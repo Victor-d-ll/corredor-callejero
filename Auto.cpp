@@ -32,6 +32,7 @@ Auto::Auto(int velocidad, int color) {
 	this->color = color;
 }
 
+//Metodo que dibuja el auto en pantalla
 void Auto::dibujar(){
 	int posx;
 	int posy;
@@ -48,15 +49,16 @@ void Auto::dibujar(){
 		}	
 		posx = x;
 		posy++;
-	}
-	
+	}	
 }
 
+//Metodo que mueve el auto en x
 void Auto::moverse(char direccion){
 	if (direccion == 'D') x++;
 	else x--;
 }
 
+//Metodo que actualiza al objeto segun el tiempo transcurrido
 void Auto::update(){	
 	if(tempo+paso<clock()){
 		clrscr();
@@ -66,6 +68,7 @@ void Auto::update(){
 	
 }
 
+//Metodo que pone al auto en una posicion x e y
 void Auto::setPosition(int x, int y){
 	this->x = x;
 	this->y = y;
