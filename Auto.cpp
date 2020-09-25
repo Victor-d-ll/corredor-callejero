@@ -33,42 +33,52 @@ Auto::Auto(int velocidad, int color) {
 }
 
 //Metodo que dibuja el auto en pantalla
-void Auto::dibujar(){
-	int posx;
-	int posy;
-	posx = x;	
-	posy = y;
+void Auto::dibujar(){	
+	
 	textbackground(GREEN);
-	textcolor(color);
+	textcolor(color);   
 	for (int i=0; i<3; i++){	
-		for (int j=0; j<5; j++){
-			
-			gotoxy(posx,posy);
-			std::cout<<dibujoAuto [i][j];			
-			posx++;
-		}	
-		posx = x;
-		posy++;
+		for (int j=0; j<5; j++){			
+			gotoxy(x+j,y+i);
+			std::cout<<dibujoAuto [i][j];	
+		}			
 	}	
 }
 
+//Metodo que limpia la pantalla para que no se dibujen mal los caracteres
+//De esta manera evito usar clrscr debido a que parpadea demasiado
+void Auto::limpiar(){	
+	gotoxy(x-1,y);
+	std::cout<<' ';	
+	gotoxy(x-1,y+2);	
+	std::cout<<' ';
+	gotoxy(x+5,y);
+	std::cout<<' ';	
+	gotoxy(x+5,y+2);	
+	std::cout<<' ';	
+}
+
 //Metodo que mueve el auto en x
-void Auto::moverse(char direccion){
-	if (direccion == 'D') x++;
-	else x--;
+void Auto::moverse(char direccion){	
+	if (direccion == 'D') {
+		if(x==115) return; //Si ya esta en el borde derecho retorna
+		x++;
+	}else{
+		if(x==2) return; //Si ya esta en el borde izquierdo retorna
+		x--;
+	}
 }
 
 //Metodo que actualiza al objeto segun el tiempo transcurrido
 void Auto::update(){	
 	if(tempo+paso<clock()){
-		clrscr();
+		limpiar();
 		dibujar();	
-		tempo = clock();
-	}
-	
+		tempo = clock();		
+	}		
 }
 
-//Metodo que pone al auto en una posicion x e y
+//Metodo que recibe int x e int y que indican la posición del auto 
 void Auto::setPosition(int x, int y){
 	this->x = x;
 	this->y = y;

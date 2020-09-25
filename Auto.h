@@ -12,11 +12,12 @@ public:
 private:
 	void dibujar();
 	char dibujoAuto[3][5];
+	void limpiar();
+	clock_t tempo;
+	clock_t paso;
 	int x;
 	int y;
 	int velocidad;
-	clock_t tempo;
-	clock_t paso;
 	int color;
 };
 
