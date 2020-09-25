@@ -4,7 +4,7 @@
 
 Juego::Juego() {	
 	autoJugador = new Auto(60,1);
-	autoEnemigo = new Auto(60,1);
+	autoEnemigo = new Auto(60,4);
 	
 	autoJugador->setPosition(10,27);
 	autoEnemigo->setPosition(15, 8);
