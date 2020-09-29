@@ -11,6 +11,7 @@ public:
 private:
 	int direccion;
 	void moverse();
+	void reiniciar();
 };
 
 #endif

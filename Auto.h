@@ -13,7 +13,7 @@ protected:
 	enum direcciones{izquierda,arriba,derecha,abajo};
 	void dibujar();
 	char dibujoAuto[3][5];
-	void limpiar(int direccion);
+	void limpiar();
 	clock_t tempo;
 	clock_t paso;
 	int x;

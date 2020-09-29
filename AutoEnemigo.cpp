@@ -1,7 +1,7 @@
 #include "AutoEnemigo.h"
 #include <cstdlib>
 
-AutoEnemigo::AutoEnemigo(): Auto(10,1) {
+AutoEnemigo::AutoEnemigo(): Auto(1,1) {
 	direccion = rand() % 10;
 }
 
@@ -18,16 +18,26 @@ void AutoEnemigo::update ( ) {
 }
 
 void AutoEnemigo::moverse(){
-	if(y==30-alto || x == 3 || x == 90) return;
-	y++;
-	limpiar(arriba);
-	limpiar(abajo);
-	if(direccion % 2 == 0) {
-		
-		limpiar(izquierda);
-		x++;
-	}else{
-		limpiar(derecha);
-		x--;
+	limpiar();
+	if(y==30-alto) {
+		reiniciar();
+		return;
 	}
+	y++;	
+	
+	//limpiar(abajo);
+	/*if(direccion % 2 == 0) {
+		if(x==90) return;		
+		x++;
+	//	limpiar(izquierda);
+	}else{
+		if(x==7) return;		
+		x--;
+		//limpiar(derecha);
+	}	*/
+}
+
+void AutoEnemigo::reiniciar(){
+	x = rand() % 30 + 3;
+	y = 2;
 }

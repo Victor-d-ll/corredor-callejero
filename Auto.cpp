@@ -53,29 +53,16 @@ void Auto::dibujar(){
 
 //Metodo que limpia la pantalla para que no se dibujen mal los caracteres
 //De esta manera evito usar clrscr debido a que parpadea demasiado.
-void Auto::limpiar(int direccion){		
-	switch (direccion){
-	case izquierda:
+void Auto::limpiar(){	
+
+	
 		gotoxy(x,y);
-		std::cout<<' ';	
-		gotoxy(x,y+2);
-		std::cout<<' ';
-		break;
-	case derecha:
-		gotoxy(x+4,y);
-		std::cout<<' ';	
-		gotoxy(x+4,y+2);
-		std::cout<<' ';	
-		break;		
-	case arriba:
+		std::cout<<"     ";	
 		gotoxy(x,y+1);
-		std::cout<<"     ";		
-		break;	
-	case abajo:
-		gotoxy(x,y-1);
-		std::cout<<"     ";		
-		break;	
-	}	
+		std::cout<<"     ";	
+		gotoxy(x,y+2);
+		std::cout<<"     ";	
+	
 }
 
 //Metodo que virtual vacio, se define dentro de cada clase hija
