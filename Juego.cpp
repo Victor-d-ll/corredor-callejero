@@ -7,17 +7,25 @@ Juego::Juego() {
 	autoJugador->setPosition(20,27);
 	autoEnemigo = new AutoEnemigo();
 	autoEnemigo->setPosition(15, 8);
-	paredes = new Limites(30, 10,1);
+	//paredes = new Limites(30, 10,1);
+	paredes[0] = new Limites(30,10,1);
+	paredes[1] = new Limites(30,45,75);
 	hidecursor();
 }
 
 Juego::~Juego() {	
 	delete autoJugador;
 	delete autoEnemigo;
+	for (int i = 0; i < 6; i++)
+	{
+		delete paredes[i];
+	}	
 }
 
 void Juego::start() {
 	limpiar();
+	paredes[0]->update();
+	paredes[1]->update();
 	while(true){		
 		capturaEvento();
 		update();			
@@ -51,6 +59,5 @@ void Juego::capturaEvento(){
 
 void Juego::update(){
 	autoJugador->update();
-	autoEnemigo->update();
-	paredes->update();
+	autoEnemigo->update();	
 }

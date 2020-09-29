@@ -2,7 +2,7 @@
 #include <cstdlib>
 
 //Este constructor le pasa los argumentos para inicializar la clase base Auto
-AutoEnemigo::AutoEnemigo(): Auto(5,1) {
+AutoEnemigo::AutoEnemigo(): Auto(15,1) {
 	direccion = rand() % 10; //Este auto se mueve aleatoriamente
 }
 
@@ -29,7 +29,7 @@ void AutoEnemigo::moverse(){
 	}
 	y++;				//Se mueve en y hacia abajo
 	if(direccion % 2 == 0) { //Se mueve hacia la izquierda
-		if(x==90) return;		//Si tocó el limite retorna
+		if(x==limite_derecho-ancho) return;		//Si tocó el limite retorna
 		x++;
 	
 	}else{ //Hacia la derecha
@@ -40,6 +40,6 @@ void AutoEnemigo::moverse(){
 
 void AutoEnemigo::reiniciar(){
 	direccion = rand() % 10;
-	x = rand() % 40 + 5;
+	x = rand() % 40 + 11;
 	y = 1;
 }

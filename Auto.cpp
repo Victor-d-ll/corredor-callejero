@@ -31,6 +31,7 @@ Auto::Auto(int velocidad, int color) {
 	alto = 3;	//Este es el alto del dibujo
 	ancho = 4; //Ancho del dibujoAuto
 	limite_izquierdo = 11;
+	limite_derecho = 74;
 	this->color = color;
 }
 

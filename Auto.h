@@ -23,6 +23,7 @@ protected:
 	int alto;
 	int ancho;
 	int limite_izquierdo;
+	int limite_derecho;
 };
 
 #endif

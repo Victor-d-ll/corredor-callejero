@@ -21,7 +21,7 @@ void Autojugador::update(){
 //Metodo que mueve el auto en x
 void Autojugador::moverse(char direccion){		
 	if (direccion == 'D') {		
-		if(x==115) return; //Si ya esta en el borde derecho retorna		
+		if(x==limite_derecho-ancho) return; //Si ya esta en el borde derecho retorna		
 		limpiar(); //Si se mueve a la derecha limpia un espacio hacia izquierda
 		x++;		
 	}else{		

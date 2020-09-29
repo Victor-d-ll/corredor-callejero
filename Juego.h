@@ -19,7 +19,7 @@ private:
 	int velocidad;	
 	Autojugador* autoJugador;
 	AutoEnemigo* autoEnemigo;
-	Limites* paredes;
+	Limites*  paredes[2];
 };
 
 #endif
