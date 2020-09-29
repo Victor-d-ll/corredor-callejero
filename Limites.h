@@ -4,15 +4,14 @@
 class Limites {
 public:
 	Limites();
-	Limites(int alto, int ancho, int pos_inicial);
-	//void update();
+	Limites(int alto, int ancho, int pos_inicial);	
 	void dibujar();
 	
 private:
-	int alto;
-	int ancho;
-	int x;
-	int y;
+	int alto;	//Alto de la pared
+	int ancho; //Ancho de la pared
+	int x; //Posicion x en la pantalla
+	int y; //Posicion y en la pantalla
 	
 };
 

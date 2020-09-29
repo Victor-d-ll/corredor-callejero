@@ -16,12 +16,12 @@ protected:
 	void limpiar();
 	clock_t tempo;
 	clock_t paso;
-	int x;
-	int y;
-	int velocidad;
-	int color;
-	int alto;
-	int ancho;
+	int x; //Posicion x en la pantalla
+	int y; //Posicion y en la pantalla
+	int velocidad; 
+	int color; //Color del auto
+	int alto;  //Alto del auto
+	int ancho; //Ancho del auto
 	int limite_izquierdo;
 	int limite_derecho;
 };
