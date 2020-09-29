@@ -19,6 +19,7 @@ private:
 	Autojugador* autoJugador;
 	AutoEnemigo* autoEnemigo;
 	Limites*  paredes[2];
+	void chequearColisiones();
 };
 
 #endif

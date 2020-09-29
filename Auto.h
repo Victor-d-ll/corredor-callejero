@@ -8,6 +8,8 @@ public:
 	virtual ~Auto();
 	void setPosition(int x, int y);		
 	virtual void update();
+	int getPositionX();
+	int getPositionY();
 	
 protected:
 	enum direcciones{izquierda,arriba,derecha,abajo};

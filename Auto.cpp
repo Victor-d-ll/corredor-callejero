@@ -40,6 +40,14 @@ Auto::~Auto() {
 	
 }
 
+int Auto::getPositionX(){
+	return x;
+}
+
+int Auto::getPositionY(){
+	return y;
+}
+
 //Metodo que dibuja el auto en pantalla
 void Auto::dibujar(){	
 	

@@ -60,4 +60,18 @@ void Juego::capturaEvento(){
 void Juego::update(){
 	autoJugador->update();
 	autoEnemigo->update();	
+	chequearColisiones();
 }
+
+//Detecta colisiones
+void Juego::chequearColisiones(){
+	int distancia = abs(autoJugador->getPositionX() - autoEnemigo->getPositionX())
+		+ abs(autoJugador->getPositionY() - autoEnemigo->getPositionY());
+	if (distancia >= 0 && distancia <=5){	
+		//Congela la ejecución por un segundo
+		//Reinicia al objeto enemigo
+	}
+}
+
+//Distancia es igual a la absoluta de x2-x1 + absoluta de y2-y1
+
