@@ -13,11 +13,12 @@ Limites::Limites(int alto, int ancho, int x) {
 	y = 1;
 }
 
-void Limites::update() {
-	dibujar();
+void Limites::update() {	
+	dibujar();	
 }
 
-void Limites::dibujar(){	
+void Limites::dibujar(){
+	textcolor(BROWN);
 	for(int i=0; i<alto; i++){
 		for(int j=0; j<ancho; j++){
 			gotoxy(x+j,y+i);

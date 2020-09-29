@@ -3,20 +3,24 @@
 #include <windows.h> 
 
 Juego::Juego() {	
-	autoJugador = new Auto(60,1);
-	autoEnemigo = new Auto(60,4);
-	
+	autoJugador = new Autojugador();
 	autoJugador->setPosition(10,27);
+	autoEnemigo = new AutoEnemigo();
 	autoEnemigo->setPosition(15, 8);
 	paredes = new Limites(30, 3,1);
 	hidecursor();
+}
+
+Juego::~Juego() {	
+	delete autoJugador;
+	delete autoEnemigo;
 }
 
 void Juego::start() {
 	limpiar();
 	while(true){		
 		capturaEvento();
-		update();		
+		update();			
 	}	
 }
 

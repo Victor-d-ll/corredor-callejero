@@ -32,6 +32,11 @@ Auto::Auto(int velocidad, int color) {
 	this->color = color;
 }
 
+//Destructor virtual;
+Auto::~Auto() {
+	
+}
+
 //Metodo que dibuja el auto en pantalla
 void Auto::dibujar(){	
 	
@@ -46,36 +51,28 @@ void Auto::dibujar(){
 }
 
 //Metodo que limpia la pantalla para que no se dibujen mal los caracteres
-//De esta manera evito usar clrscr debido a que parpadea demasiado
-void Auto::limpiar(){	
-	gotoxy(x-1,y);
-	std::cout<<' ';	
-	gotoxy(x-1,y+2);	
-	std::cout<<' ';
-	gotoxy(x+5,y);
-	std::cout<<' ';	
-	gotoxy(x+5,y+2);	
-	std::cout<<' ';	
+//De esta manera evito usar clrscr debido a que parpadea demasiado.
+void Auto::limpiar(int direccion){	
+	
+	switch (direccion){
+	case izquierda:
+		gotoxy(x,y);
+		std::cout<<' ';	
+		gotoxy(x,y+2);
+		std::cout<<' ';
+		break;
+	case derecha:
+		gotoxy(x+4,y);
+		std::cout<<' ';	
+		gotoxy(x+4,y+2);
+		std::cout<<' ';	
+		break;		
+	}	
 }
 
-//Metodo que mueve el auto en x
-void Auto::moverse(char direccion){	
-	if (direccion == 'D') {
-		if(x==115) return; //Si ya esta en el borde derecho retorna
-		x++;
-	}else{
-		if(x==2) return; //Si ya esta en el borde izquierdo retorna
-		x--;
-	}
-}
-
-//Metodo que actualiza al objeto segun el tiempo transcurrido
+//Metodo que virtual vacio, se define dentro de cada clase hija
 void Auto::update(){	
-	if(tempo+paso<clock()){
-		limpiar();
-		dibujar();	
-		tempo = clock();		
-	}		
+	
 }
 
 //Metodo que recibe int x e int y que indican la posición del auto 

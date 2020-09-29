@@ -1,18 +1,19 @@
 #ifndef AUTO_H
 #define AUTO_H
-#include <time.h>
+#include <ctime>
 
 class Auto {
 public:
 	Auto(int velocidad, int color);	
-	void setPosition(int x, int y);
-	void update();
-	void moverse(char direccion);
+	virtual ~Auto();
+	void setPosition(int x, int y);		
+	virtual void update();
 	
-private:
+protected:
+	enum direcciones{izquierda,arriba,derecha,abajo};
 	void dibujar();
 	char dibujoAuto[3][5];
-	void limpiar();
+	void limpiar(int direccion);
 	clock_t tempo;
 	clock_t paso;
 	int x;
