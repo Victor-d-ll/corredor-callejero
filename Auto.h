@@ -20,6 +20,8 @@ protected:
 	int y;
 	int velocidad;
 	int color;
+	int alto;
+	int ancho;
 };
 
 #endif
