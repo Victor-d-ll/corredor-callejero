@@ -54,15 +54,17 @@ void Auto::dibujar(){
 //Metodo que limpia la pantalla para que no se dibujen mal los caracteres
 //De esta manera evito usar clrscr debido a que parpadea demasiado.
 void Auto::limpiar(){	
-
-	
-		gotoxy(x,y);
-		std::cout<<"     ";	
-		gotoxy(x,y+1);
+	for(int i=0; i<alto; i++){
+		for(int j=0; j<ancho+1; j++){
+			gotoxy(x+j,y+i);
+			std::cout<<' ';	
+		}
+	}
+		
+	/*	gotoxy(x,y+1);
 		std::cout<<"     ";	
 		gotoxy(x,y+2);
-		std::cout<<"     ";	
-	
+		std::cout<<"     ";	*/	
 }
 
 //Metodo que virtual vacio, se define dentro de cada clase hija
