@@ -1,11 +1,11 @@
 #include<iostream>
-#include <cstdlib>
+#include<cstdlib>
 #include "Juego.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
-	srand (time(NULL));
+	srand (time(NULL)); //Inicio la semilla para generar valores al azar
 	Juego *juego = new Juego();
 	juego->start();
 	delete(juego);
