@@ -15,8 +15,7 @@ private:
 	void limpiar();
 	void capturaEvento();
 	void update();
-	void hidecursor();	
-	int velocidad;	
+	void hidecursor();		
 	Autojugador* autoJugador;
 	AutoEnemigo* autoEnemigo;
 	Limites*  paredes[2];

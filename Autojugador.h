@@ -6,7 +6,7 @@ class Autojugador : public Auto {
 public:
 	Autojugador();
 	~Autojugador();
-	void update();
+	void update() override;
 	void moverse(char direccion);
 	
 private:

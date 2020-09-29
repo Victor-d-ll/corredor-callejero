@@ -38,7 +38,8 @@ void AutoEnemigo::moverse(){
 	}	
 }
 
-void AutoEnemigo::reiniciar(){
+
+void AutoEnemigo::reiniciar(){ 
 	direccion = rand() % 10;
 	x = rand() % 40 + 11;
 	y = 1;
