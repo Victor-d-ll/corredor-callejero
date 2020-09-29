@@ -10,6 +10,13 @@ AutoEnemigo::~AutoEnemigo() {
 }
 
 void AutoEnemigo::update ( ) {
-	dibujar();
+	if(tempo+paso<clock()){		
+		moverse();
+		dibujar();	
+		tempo = clock();		
+	}		
 }
 
+void AutoEnemigo::moverse(){
+	
+}

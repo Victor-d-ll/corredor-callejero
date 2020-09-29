@@ -10,6 +10,7 @@ public:
 	
 private:
 	int direccion;
+	void moverse();
 };
 
 #endif
