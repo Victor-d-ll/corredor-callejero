@@ -5,7 +5,7 @@ class Limites {
 public:
 	Limites();
 	Limites(int alto, int ancho, int pos_inicial);
-	void update();
+	//void update();
 	void dibujar();
 	
 private:

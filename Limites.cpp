@@ -12,11 +12,12 @@ Limites::Limites(int alto, int ancho, int x) {
 	this->x = x;
 	y = 1;
 }
-
+/*
 void Limites::update() {	
 	dibujar();	
-}
+}*/
 
+//Funcion que dibuja las paredes
 void Limites::dibujar(){
 	textcolor(BROWN);
 	for(int i=0; i<alto; i++){

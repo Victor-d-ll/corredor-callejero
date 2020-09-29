@@ -24,8 +24,8 @@ Juego::~Juego() {
 
 void Juego::start() {
 	limpiar();
-	paredes[0]->update();
-	paredes[1]->update();
+	paredes[0]->dibujar();
+	paredes[1]->dibujar();
 	while(true){		
 		capturaEvento();
 		update();			
