@@ -7,7 +7,9 @@ public:
 	AutoEnemigo();
 	~AutoEnemigo();
 	void update ( ) override;
+	
 private:
+	int direccion;
 };
 
 #endif
