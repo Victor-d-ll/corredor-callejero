@@ -29,7 +29,8 @@ Auto::Auto(int velocidad, int color) {
 	x = 1;
 	y = 1;	
 	alto = 3;	//Este es el alto del dibujo
-	ancho = 4;
+	ancho = 4; //Ancho del dibujoAuto
+	limite_izquierdo = 11;
 	this->color = color;
 }
 
@@ -54,17 +55,12 @@ void Auto::dibujar(){
 //Metodo que limpia la pantalla para que no se dibujen mal los caracteres
 //De esta manera evito usar clrscr debido a que parpadea demasiado.
 void Auto::limpiar(){	
-	for(int i=0; i<alto; i++){
+	for(int i=0; i<alto+1; i++){
 		for(int j=0; j<ancho+1; j++){
 			gotoxy(x+j,y+i);
 			std::cout<<' ';	
 		}
-	}
-		
-	/*	gotoxy(x,y+1);
-		std::cout<<"     ";	
-		gotoxy(x,y+2);
-		std::cout<<"     ";	*/	
+	}	
 }
 
 //Metodo que virtual vacio, se define dentro de cada clase hija

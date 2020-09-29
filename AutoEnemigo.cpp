@@ -1,43 +1,45 @@
 #include "AutoEnemigo.h"
 #include <cstdlib>
 
-AutoEnemigo::AutoEnemigo(): Auto(1,1) {
-	direccion = rand() % 10;
+//Este constructor le pasa los argumentos para inicializar la clase base Auto
+AutoEnemigo::AutoEnemigo(): Auto(5,1) {
+	direccion = rand() % 10; //Este auto se mueve aleatoriamente
 }
 
 AutoEnemigo::~AutoEnemigo() {
 	
 }
 
+//Update de la clase AutoEnemigo
+//limpiar pantalla, mueve el auto y dibuja segun el tiempo 
 void AutoEnemigo::update ( ) {
-	if(tempo+paso<clock()){		
+	if(tempo+paso<clock()){	
+		limpiar();
 		moverse();
 		dibujar();	
 		tempo = clock();		
 	}		
 }
 
-void AutoEnemigo::moverse(){
-	limpiar();
-	if(y==30-alto) {
-		reiniciar();
-		return;
+//Funcion que ejecuta el movimiento diagonal del auto
+void AutoEnemigo::moverse(){	
+	if(y==30-alto) {	//Si llega al limite inferior
+		reiniciar();	//Reinicia
+		return;			//retorna
 	}
-	y++;	
-	
-	//limpiar(abajo);
-	/*if(direccion % 2 == 0) {
-		if(x==90) return;		
+	y++;				//Se mueve en y hacia abajo
+	if(direccion % 2 == 0) { //Se mueve hacia la izquierda
+		if(x==90) return;		//Si tocó el limite retorna
 		x++;
-	//	limpiar(izquierda);
-	}else{
-		if(x==7) return;		
+	
+	}else{ //Hacia la derecha
+		if(x==limite_izquierdo) return;	//Si tocó el limite retorna
 		x--;
-		//limpiar(derecha);
-	}	*/
+	}	
 }
 
 void AutoEnemigo::reiniciar(){
-	x = rand() % 30 + 3;
-	y = 2;
+	direccion = rand() % 10;
+	x = rand() % 40 + 5;
+	y = 1;
 }

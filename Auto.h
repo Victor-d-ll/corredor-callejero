@@ -22,6 +22,7 @@ protected:
 	int color;
 	int alto;
 	int ancho;
+	int limite_izquierdo;
 };
 
 #endif

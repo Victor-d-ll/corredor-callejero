@@ -4,10 +4,10 @@
 
 Juego::Juego() {	
 	autoJugador = new Autojugador();
-	autoJugador->setPosition(10,27);
+	autoJugador->setPosition(20,27);
 	autoEnemigo = new AutoEnemigo();
 	autoEnemigo->setPosition(15, 8);
-	paredes = new Limites(30, 3,1);
+	paredes = new Limites(30, 10,1);
 	hidecursor();
 }
 

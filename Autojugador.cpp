@@ -25,8 +25,10 @@ void Autojugador::moverse(char direccion){
 		limpiar(); //Si se mueve a la derecha limpia un espacio hacia izquierda
 		x++;		
 	}else{		
-		if(x==2) return; //Si ya esta en el borde izquierdo retorna
+		if(x==limite_izquierdo) return; //Si ya esta en el borde izquierdo retorna
 		limpiar(); //Si se mueve a la derecha limpia un espacio hacia derecha
 		x--;		
 	}	
 }
+
+
