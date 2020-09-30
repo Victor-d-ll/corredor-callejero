@@ -39,10 +39,15 @@ void AutoEnemigo::moverse(){
 	}	
 }
 
-
+//Funcion que reinicia al auto enemigo cuando se fue de pantalla
 void AutoEnemigo::reiniciar(){ 
 	direccion = rand() % 10; //Le damos una direccion al azar
 	x = rand() % 40 + 11; //Una posicion al azar
 	y = 1; //Lo ponemos en la primer linea 
 	contador++; //Sumamos
+}
+
+//Funcion que retorna cuantas veces fue sobrepasado el auto
+int AutoEnemigo::getPasadas(){
+	return contador;
 }

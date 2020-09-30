@@ -24,3 +24,7 @@ void Panel::mostrarPuntaje(){
 	std::cout<<"Puntos: "<<puntaje;
 	textbackground(GREEN);
 }
+
+void Panel::setPuntaje(int puntaje){
+	puntajeActual = puntaje;
+}

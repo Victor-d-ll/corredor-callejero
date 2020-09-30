@@ -63,6 +63,7 @@ void Juego::update(){
 	autoJugador->update();
 	autoEnemigo->update();	
 	chequearColisiones();	//Función que chequea si los autos chocaron	
+	panel->setPuntaje(autoEnemigo->getPasadas()); //Le envia el puntaje al panel
 	panel->update();
 }
 

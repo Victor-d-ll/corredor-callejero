@@ -7,7 +7,7 @@ public:
 	AutoEnemigo();
 	~AutoEnemigo();
 	void update ( ) override;
-	
+	int getPasadas(); 
 private:
 	int direccion;
 	void moverse();
