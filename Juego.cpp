@@ -68,6 +68,7 @@ void Juego::update(){
 }
 
 //Detecta colisiones
+//Distancia es igual a la absoluta de x2-x1 + absoluta de y2-y1
 void Juego::chequearColisiones(){
 	int distancia = abs(autoJugador->getPositionX() - autoEnemigo->getPositionX())
 		+ abs(autoJugador->getPositionY() - autoEnemigo->getPositionY());
@@ -78,5 +79,5 @@ void Juego::chequearColisiones(){
 	}
 }
 
-//Distancia es igual a la absoluta de x2-x1 + absoluta de y2-y1
+
 
