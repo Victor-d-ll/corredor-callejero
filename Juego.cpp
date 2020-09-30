@@ -3,19 +3,21 @@
 #include <windows.h> 
 
 Juego::Juego() {	
-	autoJugador = new Autojugador();
+	autoJugador = new AutoJugador();
 	autoJugador->setPosition(20,27);
 	autoEnemigo = new AutoEnemigo();
 	autoEnemigo->setPosition(15, 8);
 	//paredes = new Limites(30, 10,1);
 	paredes[0] = new Limites(30,10,1);
 	paredes[1] = new Limites(30,45,75);
+	panel = new Panel();
 	hidecursor();
 }
 
 Juego::~Juego() {	
 	delete autoJugador;
 	delete autoEnemigo;
+	delete panel;
 	for (int i = 0; i < 2; i++)
 	{
 		delete paredes[i];
@@ -60,7 +62,8 @@ void Juego::capturaEvento(){
 void Juego::update(){
 	autoJugador->update();
 	autoEnemigo->update();	
-	chequearColisiones();
+	chequearColisiones();	//Función que chequea si los autos chocaron	
+	panel->update();
 }
 
 //Detecta colisiones
@@ -70,6 +73,7 @@ void Juego::chequearColisiones(){
 	if (distancia >= 0 && distancia <=5){	
 		//Congela la ejecución por un segundo
 		//Reinicia al objeto enemigo
+	
 	}
 }
 

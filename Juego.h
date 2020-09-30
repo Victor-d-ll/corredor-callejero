@@ -3,7 +3,8 @@
 #include "Auto.h"
 #include "Limites.h"
 #include "AutoEnemigo.h"
-#include "Autojugador.h"
+#include "AutoJugador.h"
+#include "Panel.h"
 
 class Juego {
 public:
@@ -15,11 +16,13 @@ private:
 	void limpiar();
 	void capturaEvento();
 	void update();
-	void hidecursor();		
-	Autojugador* autoJugador;
-	AutoEnemigo* autoEnemigo;
-	Limites*  paredes[2];
+	void hidecursor();	
 	void chequearColisiones();
+	AutoJugador* autoJugador;
+	AutoEnemigo* autoEnemigo;
+	Panel* panel;
+	Limites*  paredes[2];
+	
 };
 
 #endif

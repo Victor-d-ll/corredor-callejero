@@ -2,10 +2,10 @@
 #define AUTOJUGADOR_H
 #include "Auto.h"
 
-class Autojugador : public Auto {
+class AutoJugador : public Auto {
 public:
-	Autojugador();
-	~Autojugador();
+	AutoJugador();
+	~AutoJugador();
 	void update() override;
 	void moverse(char direccion);
 	

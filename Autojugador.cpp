@@ -1,17 +1,17 @@
-#include "Autojugador.h"
+#include "AutoJugador.h"
 
 //Constructor
-Autojugador::Autojugador() : Auto(60,1) {
+AutoJugador::AutoJugador() : Auto(60,1) {
 	
 }
 
 //Destructor
-Autojugador::~Autojugador() {
+AutoJugador::~AutoJugador() {
 	
 }
 
 //Funcion que chequea el tiempo y actualiza si corresponde
-void Autojugador::update(){	
+void AutoJugador::update(){	
 	if(tempo+paso<clock()){		
 		dibujar();	
 		tempo = clock();		
@@ -19,7 +19,7 @@ void Autojugador::update(){
 }
 
 //Metodo que mueve el auto en x
-void Autojugador::moverse(char direccion){		
+void AutoJugador::moverse(char direccion){		
 	if (direccion == 'D') {		
 		if(x==limite_derecho-ancho) return; //Si ya esta en el borde derecho retorna		
 		limpiar(); //Si se mueve a la derecha limpia un espacio hacia izquierda
@@ -30,5 +30,4 @@ void Autojugador::moverse(char direccion){
 		x--;		
 	}	
 }
-
 

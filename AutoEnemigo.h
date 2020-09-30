@@ -12,7 +12,7 @@ private:
 	int direccion;
 	void moverse();
 	void reiniciar();
+	int contador; //Variable que guarda cuantas veces el auto fue sobrepasado
 };
 
 #endif
-
