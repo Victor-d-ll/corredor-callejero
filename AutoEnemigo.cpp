@@ -45,6 +45,7 @@ void AutoEnemigo::reiniciar(){
 	x = rand() % 40 + 11; //Una posicion al azar
 	y = 1; //Lo ponemos en la primer linea 
 	contador++; //Sumamos
+	if(contador == 10 || contador == 20) paso = paso / 2; //Se acelera cada 10
 }
 
 //Funcion que retorna cuantas veces fue sobrepasado el auto

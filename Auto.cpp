@@ -1,6 +1,6 @@
 #include "Auto.h"
 #include <conio2.h>
-#include <iostream>
+#include <iostream> //std::cout
 
 Auto::Auto(int velocidad, int color) {
 	

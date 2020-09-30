@@ -1,13 +1,12 @@
 #include "Juego.h"
-#include <conio2.h>
+#include <conio2.h> //gotoxy, textcolor, etc
 #include <windows.h> 
 
 Juego::Juego() {	
 	autoJugador = new AutoJugador();
 	autoJugador->setPosition(20,27);
 	autoEnemigo = new AutoEnemigo();
-	autoEnemigo->setPosition(15, 8);
-	//paredes = new Limites(30, 10,1);
+	autoEnemigo->setPosition(15, 8);	
 	paredes[0] = new Limites(30,10,1);
 	paredes[1] = new Limites(30,45,75);
 	panel = new Panel();
@@ -75,7 +74,7 @@ void Juego::chequearColisiones(){
 	if (distancia >= 0 && distancia <=5){	
 		//Congela la ejecución por un segundo
 		//Reinicia al objeto enemigo
-	
+		
 	}
 }
 
