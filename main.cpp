@@ -1,6 +1,7 @@
 #include<iostream>
 #include<cstdlib>
 #include "Juego.h"
+#include <ctime>
 
 using namespace std;
 

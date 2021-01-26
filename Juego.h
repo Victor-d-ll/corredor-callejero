@@ -1,9 +1,6 @@
 #ifndef JUEGO_H
 #define JUEGO_H
-#include "Auto.h"
 #include "Limites.h"
-#include "AutoEnemigo.h"
-#include "AutoJugador.h"
 #include "Panel.h"
 
 class Juego {
@@ -17,9 +14,7 @@ private:
 	void capturaEvento();
 	void update();
 	void hidecursor();	
-	void chequearColisiones();
-	AutoJugador* autoJugador;
-	AutoEnemigo* autoEnemigo;
+	void chequearColisiones();	
 	Panel* panel;
 	Limites*  paredes[2];
 	
