@@ -2,6 +2,7 @@
 #define JUEGO_H
 #include "Limites.h"
 #include "Panel.h"
+#include "Vehiculo.h"
 
 class Juego {
 public:
@@ -17,6 +18,7 @@ private:
 	void chequearColisiones();	
 	Panel* panel;
 	Limites*  paredes[2];
+	Vehiculo* player;
 	
 };
 
