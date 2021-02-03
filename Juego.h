@@ -23,6 +23,7 @@ private:
 	void restarPuntaje();
 	void mostrarIntro();
 	void mostrarTextos(int inicio, int final,int posicion_y, std::string* textos);	
+	void mostrarOutro();
 	Panel* panel;
 	Limites*  paredes[2];
 	Vehiculo* player;

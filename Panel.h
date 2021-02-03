@@ -10,11 +10,13 @@ public:
 	void update();	
 	void aumentarPuntaje();
 	void restarPuntaje();
+	int getPuntaje();
 	
 private:
 	int puntaje;
 	int puntajeActual;
 	int autosEsquivados;
+	int vidas;
 	void mostrarPuntaje();
 	clock_t tempo;
 	clock_t paso;

@@ -15,7 +15,7 @@ Limites::Limites(int alto, int ancho, int x) {
 
 //Funcion que dibuja las paredes
 void Limites::dibujar(){
-	textcolor(BROWN);
+	textcolor(LIGHTGREEN);
 	for(int i=0; i<alto; i++){
 		for(int j=0; j<ancho; j++){
 			gotoxy(x+j,y+i);

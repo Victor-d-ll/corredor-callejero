@@ -40,8 +40,48 @@ void Juego::start() {
 	while(player->getEstaActivo()){		//Mientras que el jugador tenga vidas
 		update();			
 	}	
+	mostrarOutro();
 }
 
+/*Muestra un texto de despedida con opciones*/
+void Juego::mostrarOutro(){
+	textbackground(BLACK);
+	clrscr();	
+	std::string textos[] = {
+			"******************",
+			"Gracias por jugar!",
+			"******************",
+			"Su puntaje ha sido de",
+			std::to_string(panel->getPuntaje()),
+			"Presione",
+			"S para salir",
+			"R para reiniciar el juego"			
+			};	
+	
+	mostrarTextos(0,3,3, textos);
+	mostrarTextos(3,5,6, textos);	
+	
+	//Esto irá en color para remarcar que hay que elegir opciones
+	int opcion = getch();
+	while(true)
+	{
+		mostrarTextos(5,8,9, textos);
+		if(kbhit()){
+			opcion = getch();
+			std::cout<<opcion<<std::endl;
+			if(opcion==115||opcion==113) break; //Si toca S o Q (115) sale
+			
+		}
+		Sleep(500);
+	}
+	if(opcion==113) {
+		//restart
+	}
+	
+	//Aquí se debe llamar al reinicio del juego o simplemente salir
+}
+
+/*Muestra un texto de bienvenida con reglas de juego*/
 void Juego::mostrarIntro(){
 	std::string textos[] = {
 		"**************",
@@ -119,8 +159,8 @@ void Juego::chequearColisiones(Vehiculo *enemigo){
 	   player->getPosicionY() < enemigo->getPosicionY() + 3 &&
 	   player->getPosicionY() + 3 > enemigo->getPosicionY()){
 		Sleep(1300);
-		enemigo->kill();
-		/*AQUI METODO PARA MODIFICAR EL PUNTAJE CUANDO SE MUERE*/
+		enemigo->kill();		
+		player->kill();
 		activarEnemigo(true);
 		restarPuntaje();
 	}									 
