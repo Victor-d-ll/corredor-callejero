@@ -17,6 +17,7 @@ private:
 	void dibujar(); 
 	void capturarEntrada();
 	int vidas;
+	
 };
 
 #endif

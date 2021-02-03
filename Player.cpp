@@ -65,5 +65,5 @@ void Player::dibujar(){
 
 //Método que se activa cada vez que choca
 void Player::kill(){
-	vidas -=1; //resto una vida
+	vidas -=1; //resto una vida	
 }

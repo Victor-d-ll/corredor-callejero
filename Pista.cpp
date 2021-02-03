@@ -18,13 +18,13 @@ void Pista::update(){
 void Pista::dibujarLineaCentral(){
 	for(int i=0;i<30; i++){			
 		textbackground(GREEN);
-		gotoxy(42,i);
+		gotoxy(42,1+i);
 		std::cout<<" ";	
 	}
-	for(int i=1;i<30; i++){	
+	for(int i=0;i<30; i++){	
 		if(i%2==orden) continue;
 		textbackground(WHITE);
-		gotoxy(42,i);
+		gotoxy(42,1+i);
 		std::cout<<" ";	
 	}
 }

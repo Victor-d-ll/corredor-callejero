@@ -103,6 +103,7 @@ void Juego::update(){
 	pista.update();
 	panel->update();
 	player->update();
+
 	/*TODO METER EN ARREGLO*/
 	enemigo1->update();
 	enemigo2->update();	
