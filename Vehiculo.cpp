@@ -1,6 +1,6 @@
 #include "Vehiculo.h"
 
-
+#include <iostream>
 //Destructor virtual
 Vehiculo::~Vehiculo(){};
 
@@ -30,10 +30,12 @@ Vehiculo::Vehiculo(int velocidad, int color) {
 	dibujoAuto [2][4] = char(219);
 	
 	/*Variables*/
-	this->velocidad = velocidad;
+	this->velocidad = velocidad;	
 	this->color = color;
 	tempo=clock(); 
 	paso=CLOCKS_PER_SEC/velocidad;	
+	y = 1;
+	x = 15;
 }
 
 //Método que retorna la posicion x del vehículo
@@ -44,6 +46,7 @@ int Vehiculo::getPosicionX(){
 int Vehiculo::getPosicionY(){
 	return y;
 }
+
 
 
 

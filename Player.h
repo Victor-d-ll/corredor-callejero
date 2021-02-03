@@ -6,10 +6,17 @@ class Player : public Vehiculo {
 public:
 	Player();
 	Player(int velocidad, int color);	
-	void update ( ) override;
-	void setPosicion (int x, int y) override;
+	void update ();
+	void setPosicion (int x, int y);
+	void kill();
+	void setActivar();
+	void acelerar();
+	bool getEstaActivo();
 	
 private:
+	void dibujar(); 
+	void capturarEntrada();
+	int vidas;
 };
 
 #endif
