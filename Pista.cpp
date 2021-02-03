@@ -14,6 +14,7 @@ void Pista::update(){
 		tempo=clock();
 	}	
 }
+
 /*Método que dibuja la linea central la pista*/
 void Pista::dibujarLineaCentral(){
 	for(int i=0;i<30; i++){			
@@ -27,7 +28,9 @@ void Pista::dibujarLineaCentral(){
 		gotoxy(42,1+i);
 		std::cout<<" ";	
 	}
+	textbackground(GREEN); //Dejo el color en verde para evitar errores al dibujarse
 }
+
 /*Método que dibuja bordes de la pista*/
 void Pista::dibujarBordes(){
 	for(int i=0;i<30; i++){

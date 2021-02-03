@@ -7,12 +7,18 @@ Player::Player() {}
 //El constructor
 Player::Player(int velocidad, int color):Vehiculo(velocidad, color) {
 	vidas = 3;
+	tempo=clock(); 
+	paso=CLOCKS_PER_SEC/50;		
 }
 
 /*Método update*/
 void Player::update () {		
-	dibujar();//Dibuja en la pantalla
-	capturarEntrada(); // Captura la entrada del teclado	
+	if(tempo+paso<clock()){
+		dibujar();//Dibuja en la pantalla
+		capturarEntrada(); // Captura la entrada del teclado	
+		tempo=clock(); 
+	}
+	
 }
 
 void Player::setActivar() {} //Vacia
@@ -53,14 +59,14 @@ void Player::capturarEntrada(){
 
 /*Método que dibuja al auto en pantalla*/
 void Player::dibujar(){
-	/*Dibuja*/
+	/*Dibuja*/	
 	textcolor(color);
 	for(int fila=0; fila<3; fila++){
 		for(int columna=0; columna<5; columna++){			
 			gotoxy(x+columna,y+fila);
 			std::cout<<dibujoAuto[fila][columna];	
 		}
-	}
+	}	
 }
 
 //Método que se activa cada vez que choca
