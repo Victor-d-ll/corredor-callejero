@@ -36,10 +36,10 @@ void Pista::dibujarBordes(){
 	for(int i=0;i<30; i++){
 		if(i%2==orden) textbackground(RED);
 		else textbackground(WHITE);
-		gotoxy(11,1+i);
+		gotoxy(10,1+i);
 		std::cout<<" ";	
 		
-		gotoxy(74,1+i);
+		gotoxy(75,1+i);
 		std::cout<<" ";
 	}		
 	if(orden==0) orden =1;
