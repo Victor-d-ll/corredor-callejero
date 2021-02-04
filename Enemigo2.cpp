@@ -11,7 +11,6 @@ Enemigo2::Enemigo2(int velocidad, int color) : Vehiculo(velocidad, color) {
 	direccion = rand()%100;
 }
 
-
 //Destructor
 Enemigo2::~Enemigo2() {}
 

@@ -48,8 +48,6 @@ int Vehiculo::getPosicionY(){
 	return y;
 }
 
-
-
 /*Método que dibuja al auto en pantalla*/
 void Vehiculo::dibujar(){
 	/*Dibuja*/

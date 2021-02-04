@@ -61,18 +61,6 @@ void Player::capturarEntrada(){
 	}
 }
 
-/*Método que dibuja al auto en pantalla*/
-void Player::dibujar(){
-	/*Dibuja*/	
-	textcolor(color);
-	for(int fila=0; fila<3; fila++){
-		for(int columna=0; columna<5; columna++){			
-			gotoxy(x+columna,y+fila);
-			std::cout<<dibujo[fila][columna];	
-		}
-	}	
-}
-
 //Método que se activa cada vez que choca
 void Player::kill(){
 	vidas -=1; //resto una vida	

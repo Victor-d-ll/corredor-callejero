@@ -13,8 +13,7 @@ public:
 	void acelerar();
 	bool getEstaActivo();
 	void reiniciarParametros();
-private:
-	void dibujar(); 
+private:	
 	void capturarEntrada();
 	int vidas;	
 };
