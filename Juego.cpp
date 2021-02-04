@@ -6,8 +6,7 @@
 #include <windows.h> //En gnu/linux no funcionará
 
 /*TODO poner enemigos en arreglos*/
-Juego::Juego() {		
-
+Juego::Juego() {	
 	paredes[0] = new Limites(30,10,1);
 	paredes[1] = new Limites(30,45,75);
 	panel = new Panel();
@@ -17,38 +16,41 @@ Juego::Juego() {
 	enemigo1->setPosicion(35,1);
 	enemigo2 = new Enemigo2(10, rand()%15);
 	enemigo2->setPosicion(35,1);
-	activarEnemigo(false);
-	hidecursor();
+	pista = new Pista();
+	activarEnemigo(false);	
 }
 
-Juego::~Juego() {		
-	delete panel;
+Juego::~Juego() {	
 	for (int i = 0; i < 2; i++)	{
 		delete paredes[i];
 	}	
+	delete panel;	
 	delete player;
 	delete enemigo1;
 	delete enemigo2;
+	delete pista;
 }
 
 void Juego::start() {
 	mostrarIntro();
 	limpiar();
-	for (int i=0;i<2;i++){
-		paredes[i]->dibujar();
-	}	
+	dibujarParedes();
 	while(player->getEstaActivo()){		//Mientras que el jugador tenga vidas
 		update();			
 	}	
 	mostrarOutro();
 }
 
+
+void Juego::dibujarParedes(){
+	for (int i=0;i<2;i++){
+		paredes[i]->dibujar();
+	}	
+}
 /*Muestra un texto de despedida con opciones*/
 void Juego::mostrarOutro(){
-	textbackground(BLACK);
-	clrscr();	
 	std::string textos[] = {
-			"******************",
+		"******************",
 			"Gracias por jugar!",
 			"******************",
 			"Su puntaje ha sido de",
@@ -56,7 +58,10 @@ void Juego::mostrarOutro(){
 			"Presione",
 			"S para salir",
 			"R para reiniciar el juego"			
-			};	
+	};	
+	
+	textbackground(BLACK);
+	clrscr();	
 	
 	mostrarTextos(0,3,3, textos);
 	mostrarTextos(3,5,6, textos);	
@@ -108,6 +113,7 @@ void Juego::mostrarIntro(){
 		Sleep(500);
 	}	
 }
+
 /* inicio es la posicion inicial del arreglo
    final la posicion final del arreglo
    posicion_y la posicion para dibujar en y
@@ -120,17 +126,6 @@ void Juego::mostrarTextos(int inicio, int final, int posicion_y, std::string* te
 		std::cout<<textos[i];
 	}
 }
-/*Este metodo esta a ser visto*/
-/*TODO*/
-void Juego::hidecursor()
-{
-	return;
-	HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
-	CONSOLE_CURSOR_INFO info;
-	info.dwSize = 100;
-	info.bVisible = FALSE;
-	SetConsoleCursorInfo(consoleHandle, &info);
-}
 
 //Método que limpia el background
 void Juego::limpiar(){
@@ -140,15 +135,15 @@ void Juego::limpiar(){
 
 //Aquí van los updates del juego
 void Juego::update(){	
-	pista.update();
+	pista->update();
 	panel->update();
 	player->update();
 	/*TODO METER EN ARREGLO*/
 	enemigo1->update();
 	enemigo2->update();	
-	chequearColisiones(enemigo2);	//Función que chequea si los autos chocaron		
-	chequearColisiones(enemigo1);	//Función que chequea si los autos chocaron	
-	activarEnemigo(false);
+	chequearColisiones(enemigo2);	//Método que chequea si los autos chocaron		
+	chequearColisiones(enemigo1);	//Método que chequea si los autos chocaron	
+	activarEnemigo(false);			//Método que activa a un nuevo enemigo
 }
 
 //Detecta colisiones

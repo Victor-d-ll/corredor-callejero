@@ -15,8 +15,7 @@ public:
 private:
 	void limpiar();
 	void capturaEvento();
-	void update();
-	void hidecursor();	
+	void update();	
 	void chequearColisiones(Vehiculo *enemigo);	
 	void activarEnemigo(bool hayColision);
 	void aumentarPuntaje();
@@ -24,12 +23,14 @@ private:
 	void mostrarIntro();
 	void mostrarTextos(int inicio, int final,int posicion_y, std::string* textos);	
 	void mostrarOutro();
+	void dibujarParedes();
 	Panel* panel;
 	Limites*  paredes[2];
 	Vehiculo* player;
 	Vehiculo* enemigo1;
 	Vehiculo* enemigo2;
-	Pista pista;
+	Pista* pista;
+	
 	
 };
 
