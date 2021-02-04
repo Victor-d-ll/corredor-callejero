@@ -1,8 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include "Vehiculo.h"
+#include "Movil.h"
 #include <ctime>
-class Player : public Vehiculo {
+class Player : public Movil {
 public:
 	Player();
 	Player(int velocidad, int color);	

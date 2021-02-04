@@ -5,7 +5,7 @@
 Player::Player() {}
 
 //El constructor
-Player::Player(int velocidad, int color):Vehiculo(velocidad, color) {
+Player::Player(int velocidad, int color):Movil(velocidad, color) {
 	vidas = 3;
 	tempo=clock(); 
 	paso=CLOCKS_PER_SEC/50;		

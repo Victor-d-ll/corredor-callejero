@@ -2,7 +2,7 @@
 #include "conio2.h"
 #include <iostream>
 //Constructor
-Enemigo1::Enemigo1(int velocidad, int color):Vehiculo(velocidad, color) {
+Enemigo1::Enemigo1(int velocidad, int color):Movil(velocidad, color) {
 	activado = false; //Por defecto no está activado
 }
 
@@ -77,8 +77,7 @@ void Enemigo1::reiniciar(){
 			std::cout<<" ";	
 		}
 	}
-	y=1;	//Se vuelve a posicionar en y	
-	/*TODO CORREGIR POSICIONAMIENTO*/
+	y=1;	//Se vuelve a posicionar en y		
 	x=rand()%60+11;	//Se elige una posición al azar en x (dentro del rango)
 }
 

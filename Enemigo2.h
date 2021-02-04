@@ -1,8 +1,8 @@
 #ifndef ENEMIGO2_H
 #define ENEMIGO2_H
-#include "Vehiculo.h"
+#include "Movil.h"
 
-class Enemigo2 : public Vehiculo {
+class Enemigo2 : public Movil {
 public:
 	Enemigo2(int velocidad, int color);	
 	~Enemigo2();

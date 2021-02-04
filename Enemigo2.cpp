@@ -4,7 +4,7 @@
 #include <cstdlib>
 
 //Constructor
-Enemigo2::Enemigo2(int velocidad, int color) : Vehiculo(velocidad, color) {
+Enemigo2::Enemigo2(int velocidad, int color) : Movil(velocidad, color) {
 	
 	this->color = color;
 	activado = false;	//Por defecto no está activado

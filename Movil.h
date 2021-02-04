@@ -1,12 +1,12 @@
-#ifndef VEHICULO_H
-#define VEHICULO_H
+#ifndef MOVIL_H
+#define MOVIL_H
 #include <ctime>
 
-class Vehiculo {
+class Movil {
 public:
 	
-	Vehiculo(int velocidad, int color);	//Constructor
-	Vehiculo();	//Constructor vacío	
+	Movil(int velocidad, int color);	//Constructor
+	Movil();	//Constructor vacío	
 	int getPosicionX();
 	int getPosicionY();
 	virtual void update() = 0;	    //Métodos virtuales serán redefinidos en clases derivadas
@@ -16,7 +16,7 @@ public:
 	virtual void kill()=0;
 	virtual void acelerar()=0;
 	virtual void reiniciarParametros()=0;	
-	virtual ~Vehiculo(); //Destructor virtual
+	virtual ~Movil(); //Destructor virtual
 	
 protected:
 	enum  	COLORES {

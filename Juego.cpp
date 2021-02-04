@@ -157,7 +157,7 @@ void Juego::update(){
 
 //Detecta colisiones
 //Distancia es igual a la absoluta de x2-x1 + absoluta de y2-y1
-void Juego::chequearColisiones(Vehiculo *enemigo){
+void Juego::chequearColisiones(Movil* enemigo){
 	/*Básicamente estoy chequeando las colisiones creando dos rectangulos
 	y comprobando que se superpongan*/
 	if(player->getPosicionX() < enemigo->getPosicionX() + 5 &&

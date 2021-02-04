@@ -2,7 +2,7 @@
 #define JUEGO_H
 #include "Limites.h"
 #include "Panel.h"
-#include "Vehiculo.h"
+#include "Movil.h"
 #include "Pista.h"
 #include <iostream>
 
@@ -16,7 +16,7 @@ private:
 	void limpiar();
 	void capturaEvento();
 	void update();	
-	void chequearColisiones(Vehiculo *enemigo);	
+	void chequearColisiones(Movil *enemigo);	
 	void activarEnemigo(bool hayColision);
 	void aumentarPuntaje();
 	void restarPuntaje();
@@ -27,9 +27,9 @@ private:
 	void reiniciarJuego(int opcion);
 	Panel* panel;
 	Limites*  paredes[2];
-	Vehiculo* player;
-	Vehiculo* enemigo1;
-	Vehiculo* enemigo2;
+	Movil* player;
+	Movil* enemigo1;
+	Movil* enemigo2;
 	Pista* pista;	
 };
 

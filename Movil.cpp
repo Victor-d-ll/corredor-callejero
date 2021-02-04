@@ -1,15 +1,15 @@
-#include "Vehiculo.h"
+#include "Movil.h"
 
 #include <iostream>
 #include <conio2.h>
 //Destructor virtual
-Vehiculo::~Vehiculo(){};
+Movil::~Movil(){};
 
 //Constructor vacío
-Vehiculo::Vehiculo(){};
+Movil::Movil(){};
 
 //Constructor 
-Vehiculo::Vehiculo(int velocidad, int color) {
+Movil::Movil(int velocidad, int color) {
 	
 	/*Dibujo del auto*/
 	dibujo [0][0] = char(219);
@@ -40,16 +40,16 @@ Vehiculo::Vehiculo(int velocidad, int color) {
 }
 
 //Método que retorna la posicion x del vehículo
-int Vehiculo::getPosicionX(){
+int Movil::getPosicionX(){
 	return x;
 }
 //Método que retorna la posicion y del vehículo
-int Vehiculo::getPosicionY(){
+int Movil::getPosicionY(){
 	return y;
 }
 
 /*Método que dibuja al auto en pantalla*/
-void Vehiculo::dibujar(){
+void Movil::dibujar(){
 	/*Dibuja*/
 	textcolor(color);
 	for(int fila=0; fila<3; fila++){
