@@ -2,7 +2,7 @@
 #include <conio2.h>
 #include <iostream>
 
-Panel::Panel() {
+Panel::Panel()  {
 	puntaje = -10;	
 	autosEsquivados = -1;
 	tempo=clock(); 
