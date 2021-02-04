@@ -6,9 +6,8 @@ class Enemigo1 : public Movil {
 public:
 	Enemigo1(int velocidad, int color);	
 	~Enemigo1();	
-	void update ( ) override;
-	void setPosicion (int x, int y) override;
-	void aumentarVelocidad();
+	void update ( );
+	void setPosicion (int x, int y) ;	
 	void kill();
 	void acelerar();
 	void setActivar();

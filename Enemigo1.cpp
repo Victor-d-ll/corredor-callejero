@@ -56,11 +56,6 @@ void Enemigo1::setActivar(){
 	activado = true;
 }
 
-//Aumenta la velocidad 
-void Enemigo1::aumentarVelocidad(){
-	velocidad+=1;
-}
-
 //Borra la pantalla
 void Enemigo1::borrar(){
 	gotoxy(x,y);
