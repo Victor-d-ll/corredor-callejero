@@ -68,7 +68,7 @@ void Player::dibujar(){
 	for(int fila=0; fila<3; fila++){
 		for(int columna=0; columna<5; columna++){			
 			gotoxy(x+columna,y+fila);
-			std::cout<<dibujoAuto[fila][columna];	
+			std::cout<<dibujo[fila][columna];	
 		}
 	}	
 }

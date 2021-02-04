@@ -12,23 +12,23 @@ Vehiculo::Vehiculo(){};
 Vehiculo::Vehiculo(int velocidad, int color) {
 	
 	/*Dibujo del auto*/
-	dibujoAuto [0][0] = char(219);
-	dibujoAuto [0][1] = char(254);
-	dibujoAuto [0][2] = char(254);
-	dibujoAuto [0][3] = char(254);
-	dibujoAuto [0][4] = char(219);
+	dibujo [0][0] = char(219);
+	dibujo [0][1] = char(254);
+	dibujo [0][2] = char(254);
+	dibujo [0][3] = char(254);
+	dibujo [0][4] = char(219);
 	
-	dibujoAuto [1][0] = ' ';
-	dibujoAuto [1][1] = ' ';
-	dibujoAuto [1][2] = char(219);
-	dibujoAuto [1][3] = ' ';
-	dibujoAuto [1][4] = ' ';
+	dibujo [1][0] = ' ';
+	dibujo [1][1] = ' ';
+	dibujo [1][2] = char(219);
+	dibujo [1][3] = ' ';
+	dibujo [1][4] = ' ';
 	
-	dibujoAuto [2][0] = char(219);
-	dibujoAuto [2][1] = char(254);
-	dibujoAuto [2][2] = char(254);
-	dibujoAuto [2][3] = char(254);
-	dibujoAuto [2][4] = char(219);
+	dibujo [2][0] = char(219);
+	dibujo [2][1] = char(254);
+	dibujo [2][2] = char(254);
+	dibujo [2][3] = char(254);
+	dibujo [2][4] = char(219);
 	
 	/*Variables*/
 	this->velocidad = velocidad;	
@@ -57,7 +57,7 @@ void Vehiculo::dibujar(){
 	for(int fila=0; fila<3; fila++){
 		for(int columna=0; columna<5; columna++){	
 			gotoxy(x+columna,y+fila);
-			std::cout<<dibujoAuto[fila][columna];	
+			std::cout<<dibujo[fila][columna];	
 		}
 	}
 }

@@ -30,7 +30,7 @@ protected:
 	int velocidad;	 
 	int x;
 	int y;	
-	char dibujoAuto[3][5];
+	char dibujo[3][5];
 	clock_t tempo;
 	clock_t paso;	
 };
