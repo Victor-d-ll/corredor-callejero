@@ -29,6 +29,7 @@ void Enemigo1::update ( ) {
 
 /*Método que acelera el paso*/
 void Enemigo1::acelerar(){
+	/*TODO VERIFICAR SI ES MULTIPLO DE 20 y AUMENTAR VELOCIDAD*/
 	velocidad +=1;
 	paso=CLOCKS_PER_SEC/velocidad;	
 }

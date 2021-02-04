@@ -4,8 +4,7 @@
 
 class Enemigo2 : public Vehiculo {
 public:
-	Enemigo2(int velocidad, int color);
-	Enemigo2(const Enemigo2 &arg);
+	Enemigo2(int velocidad, int color);	
 	~Enemigo2();
 	void update ( ) override;
 	void setPosicion (int x, int y) override;
