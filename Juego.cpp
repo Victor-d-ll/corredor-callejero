@@ -37,7 +37,7 @@ void Juego::start() {
 	mostrarIntro(); //Muestra intro
 	limpiar();		//Limpia pantalla
 	dibujarParedes();	//Dibuja las "paredes
-	update();			//Se actualiza (esto es un bucle)
+	buclePrincipal();			//Se actualiza (esto es un bucle)
 	mostrarOutro();	//Muestra mensaje de salida
 }
 
@@ -140,8 +140,8 @@ void Juego::limpiar(){
 	clrscr();	
 }
 
-//Aquí van los updates del juego
-void Juego::update(){	
+//Aquí van los bucle Principal del juego
+void Juego::buclePrincipal(){	
 	while(player->getEstaActivo()){		//Mientras que el jugador tenga vidas
 		pista->update();
 		panel->update();

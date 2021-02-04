@@ -15,7 +15,7 @@ public:
 private:
 	void limpiar();
 	void capturaEvento();
-	void update();	
+	void buclePrincipal();	
 	void chequearColisiones(Movil *enemigo);	
 	void activarEnemigo(bool hayColision);
 	void aumentarPuntaje();
