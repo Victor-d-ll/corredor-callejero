@@ -44,18 +44,6 @@ void Enemigo1::setPosicion (int x, int y) {
 	this->y = y;
 }
 
-/*Método que dibuja al auto en pantalla*/
-void Enemigo1::dibujar(){
-	/*Dibuja*/
-	textcolor(color);
-	for(int fila=0; fila<3; fila++){
-		for(int columna=0; columna<5; columna++){	
-			gotoxy(x+columna,y+fila);
-			std::cout<<dibujoAuto[fila][columna];	
-		}
-	}
-}
-
 /*Método que se llama para reiniciar parametros*/
 void Enemigo1::reiniciarParametros(){
 	activado = false;

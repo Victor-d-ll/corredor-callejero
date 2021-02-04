@@ -15,7 +15,7 @@ public:
 	virtual bool getEstaActivo() = 0;
 	virtual void kill()=0;
 	virtual void acelerar()=0;
-	virtual void reiniciarParametros()=0;
+	virtual void reiniciarParametros()=0;	
 	virtual ~Vehiculo(); //Destructor virtual
 	
 protected:
@@ -25,6 +25,7 @@ protected:
 		DARKGRAY, LIGHTBLUE, LIGHTGREEN, LIGHTCYAN,
 		LIGHTRED, LIGHTMAGENTA, YELLOW, WHITE
 	};
+	void dibujar();
 	int color;	
 	int velocidad;	 
 	int x;

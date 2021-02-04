@@ -1,6 +1,7 @@
 #include "Vehiculo.h"
 
 #include <iostream>
+#include <conio2.h>
 //Destructor virtual
 Vehiculo::~Vehiculo(){};
 
@@ -49,5 +50,15 @@ int Vehiculo::getPosicionY(){
 
 
 
-
+/*Método que dibuja al auto en pantalla*/
+void Vehiculo::dibujar(){
+	/*Dibuja*/
+	textcolor(color);
+	for(int fila=0; fila<3; fila++){
+		for(int columna=0; columna<5; columna++){	
+			gotoxy(x+columna,y+fila);
+			std::cout<<dibujoAuto[fila][columna];	
+		}
+	}
+}
 

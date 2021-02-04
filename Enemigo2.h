@@ -17,7 +17,6 @@ private:
 	bool activado;
 	int direccion;
 	void borrar();
-	void dibujar();
 	void reiniciar();	
 };
 #endif

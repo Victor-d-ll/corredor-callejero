@@ -17,7 +17,6 @@ public:
 	
 private:
 	void reiniciar();
-	void dibujar();
 	void borrar();
 	bool activado;
 };

@@ -77,19 +77,6 @@ void Enemigo2::kill ( ) {
 	reiniciar();
 }
 
-/*TODO ESTE METODO DEBE IR A LA CLASE BASE*/
-//Metodo para dibujar
-void Enemigo2::dibujar(){
-	/*Dibuja*/
-	textcolor(color);
-	for(int fila=0; fila<3; fila++){
-		for(int columna=0; columna<5; columna++){	
-			gotoxy(x+columna,y+fila);
-			std::cout<<dibujoAuto[fila][columna];	
-		}
-	}
-}
-
 /*Método que reinicia los parametros de inicio de la clase*/  
 void Enemigo2::reiniciarParametros(){
 	activado = false;
