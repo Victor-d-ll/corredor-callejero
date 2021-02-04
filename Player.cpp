@@ -17,12 +17,16 @@ void Player::update () {
 		dibujar();//Dibuja en la pantalla
 		capturarEntrada(); // Captura la entrada del teclado	
 		tempo=clock(); 
-	}
-	
+	}	
 }
 
-void Player::setActivar() {} //Vacia
+void Player::setActivar() {} //Queda vacío
 
+/*Se llama para reiniciar al  jugador*/
+void Player::reiniciarParametros(){
+	vidas = 3;
+	x=10;
+}
 //Si le quedan vidas retorna true
 bool Player::getEstaActivo(){
 	if(vidas!=0) return true;

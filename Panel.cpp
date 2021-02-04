@@ -53,7 +53,19 @@ void Panel::restarPuntaje(){
 	vidas -=1;
 }
 
-//Devuelve el puntaje del jugador
+//Retorna el puntaje del jugador
 int Panel::getPuntaje(){
 	return puntaje;
+}
+
+//Retorna los autos esquivados*/
+int Panel::getEvitados(){
+	return autosEsquivados;
+}
+
+/*Reinicia el panel*/
+void Panel::reiniciarPanel(){
+	puntaje = -10;	
+	autosEsquivados = -1;
+	vidas = 3;	
 }

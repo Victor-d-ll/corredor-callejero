@@ -11,7 +11,8 @@ public:
 	void aumentarPuntaje();
 	void restarPuntaje();
 	int getPuntaje();
-	
+	int getEvitados();
+	void reiniciarPanel();
 private:
 	int puntaje;
 	int puntajeActual;

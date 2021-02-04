@@ -24,14 +24,13 @@ private:
 	void mostrarTextos(int inicio, int final,int posicion_y, std::string* textos);	
 	void mostrarOutro();
 	void dibujarParedes();
+	void reiniciarJuego(int opcion);
 	Panel* panel;
 	Limites*  paredes[2];
 	Vehiculo* player;
 	Vehiculo* enemigo1;
 	Vehiculo* enemigo2;
-	Pista* pista;
-	
-	
+	Pista* pista;	
 };
 
 #endif

@@ -12,13 +12,11 @@ public:
 	void setActivar();
 	void acelerar();
 	bool getEstaActivo();
-	
+	void reiniciarParametros();
 private:
 	void dibujar(); 
 	void capturarEntrada();
-	int vidas;
-	clock_t tempo;
-	clock_t paso;	
+	int vidas;	
 };
 
 #endif

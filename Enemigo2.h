@@ -13,7 +13,7 @@ public:
 	void acelerar();
 	void setActivar();	
 	bool getEstaActivo();
-	
+	void reiniciarParametros();
 private:
 	bool activado;
 	int direccion;

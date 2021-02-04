@@ -3,11 +3,8 @@
 #include <iostream>
 //Constructor
 Enemigo1::Enemigo1(int velocidad, int color):Vehiculo(velocidad, color) {
-	activado = false;
+	activado = false; //Por defecto no está activado
 }
-
-//Constructor copia
-Enemigo1::Enemigo1(const Enemigo1 &arg) {}
 
 Enemigo1::~Enemigo1() {}
 
@@ -30,6 +27,7 @@ void Enemigo1::update ( ) {
 	}
 }
 
+/*Método que acelera el paso*/
 void Enemigo1::acelerar(){
 	velocidad +=1;
 	paso=CLOCKS_PER_SEC/velocidad;	
@@ -39,6 +37,7 @@ bool Enemigo1::getEstaActivo(){
 	return activado;
 }
 
+/*Método que setea la posicion en x e y del objeto*/
 void Enemigo1::setPosicion (int x, int y) {
 	this->x = x;
 	this->y = y;
@@ -56,6 +55,14 @@ void Enemigo1::dibujar(){
 	}
 }
 
+/*Método que se llama para reiniciar parametros*/
+void Enemigo1::reiniciarParametros(){
+	activado = false;
+	velocidad = 10;
+	paso=CLOCKS_PER_SEC/velocidad;	
+}
+	
+//Activa una flag que permite activar el dibujado del enemigo
 void Enemigo1::setActivar(){
 	activado = true;
 }

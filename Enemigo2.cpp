@@ -7,19 +7,15 @@
 Enemigo2::Enemigo2(int velocidad, int color) : Vehiculo(velocidad, color) {
 	
 	this->color = color;
-	activado = false;
+	activado = false;	//Por defecto no está activado
 	direccion = rand()%100;
 }
 
-//Constructor copia
-Enemigo2::Enemigo2(const Enemigo2 &arg) {
-	
-}
-//Destructor
-Enemigo2::~Enemigo2() {
-	
-}
 
+//Destructor
+Enemigo2::~Enemigo2() {}
+
+/*Método que acelera el paso*/
 void Enemigo2::acelerar(){
 	velocidad +=1;
 	paso=CLOCKS_PER_SEC/velocidad;	
@@ -30,6 +26,7 @@ bool Enemigo2::getEstaActivo(){
 	return activado;
 }
 
+/*Método que se llama para activar al objeto*/
 void Enemigo2::setActivar(){
 	activado = true;
 }
@@ -93,6 +90,14 @@ void Enemigo2::dibujar(){
 	}
 }
 
+/*Método que reinicia los parametros de inicio de la clase*/  
+void Enemigo2::reiniciarParametros(){
+	activado = false;
+	direccion = rand()%100;
+	velocidad = 10;
+	paso=CLOCKS_PER_SEC/velocidad;	
+}
+
 //Método que borra el dibujo en pantalla totalmente
 void Enemigo2::borrar(){
 	for(int fila=0; fila<3; fila++){
@@ -111,3 +116,5 @@ void Enemigo2::reiniciar(){
 	direccion = rand()%100;	
 	borrar();
 }
+
+

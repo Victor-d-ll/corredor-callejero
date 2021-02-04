@@ -7,6 +7,7 @@ Pista::Pista() {
 	orden = 0;
 }
 
+/*Update de la pista*/
 void Pista::update(){
 	if(tempo+paso<clock()){
 		dibujarBordes();	

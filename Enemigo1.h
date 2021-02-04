@@ -14,6 +14,8 @@ public:
 	void acelerar();
 	void setActivar();
 	bool getEstaActivo();
+	void reiniciarParametros();
+	
 private:
 	void reiniciar();
 	void dibujar();
