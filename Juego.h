@@ -30,6 +30,7 @@ private:
 	Movil* player;
 	Movil* enemigo1;
 	Movil* enemigo2;
+	Movil* bloque;
 	Pista* pista;	
 };
 

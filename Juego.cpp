@@ -13,9 +13,9 @@ Juego::Juego() {
 	panel = new Panel();
 	player = new Player(10,1);
 	player->setPosicion(35,28);
-	//enemigo1 = new Enemigo1(10, 5);
-	enemigo1 = new Bloque(10, 5);
+	enemigo1 = new Enemigo1(10, 5);	
 	enemigo1->setPosicion(35,1);
+	bloque = new Bloque(10, 5);
 	enemigo2 = new Enemigo2(10, rand()%15);
 	enemigo2->setPosicion(35,1);
 	pista = new Pista();
@@ -31,6 +31,7 @@ Juego::~Juego() {
 	delete player;
 	delete enemigo1;
 	delete enemigo2;
+	delete bloque;
 	delete pista;
 }
 
@@ -91,6 +92,7 @@ void Juego::reiniciarJuego(int opcion){
 		player->reiniciarParametros(); //Reactiva al jugador
 		enemigo1->reiniciarParametros();
 		enemigo2->reiniciarParametros();
+		bloque->reiniciarParametros();
 		panel->reiniciarPanel();//Se reinicia el panel de puntos
 		start(); //Vuelve a iniciar el bucle		
 	}
@@ -150,9 +152,11 @@ void Juego::buclePrincipal(){
 		player->update();
 		/*TODO METER EN ARREGLO*/
 		enemigo1->update();
+		bloque->update();
 		enemigo2->update();	
 		chequearColisiones(enemigo2);	//Método que chequea si los autos chocaron		
 		chequearColisiones(enemigo1);	//Método que chequea si los autos chocaron	
+		chequearColisiones(bloque);	//Método que chequea si los autos chocaron	
 		activarEnemigo(false);			//Método que activa a un nuevo enemigo
 	}
 }
@@ -178,18 +182,24 @@ void Juego::chequearColisiones(Movil* enemigo){
 //Método que verifica si el enemigo esta activado o no
 void Juego::activarEnemigo(bool hayColision){	
 	//Si ninguno de los dos enemigos esta activado, se activa alguno al azar
-	if(!enemigo1->getEstaActivo() && !enemigo2->getEstaActivo()){
+	if(!enemigo1->getEstaActivo() && !enemigo2->getEstaActivo()&& !bloque->getEstaActivo()){
 		enemigo1 ->acelerar();
 		enemigo2->acelerar();
+		bloque->acelerar();
 		if(!hayColision) {		//Si hay colision no aumenta el puntaje
 			aumentarPuntaje();
 		}
-		int opcion = rand()%100;		
-		if(opcion%2==0){
+		int opcion = rand()%3;		
+		switch(opcion){
+		case 0:
 			enemigo1->setActivar();
-		}else{
+			break;
+		case 1:
 			enemigo2->setActivar();
-		}
+			break;
+		default:
+			bloque->setActivar();
+		}		
 	}	
 }
 
