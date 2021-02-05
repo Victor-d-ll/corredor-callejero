@@ -96,6 +96,7 @@ void Juego::reiniciarJuego(int opcion){
 		enemigo2->reiniciarParametros();
 		bloque->reiniciarParametros();
 		panel->reiniciarPanel();//Se reinicia el panel de puntos
+		valorViejo = 0;
 		start(); //Vuelve a iniciar el bucle		
 	}
 }
@@ -112,18 +113,20 @@ void Juego::mostrarIntro(){
 		"Reglas del juego", 
 		"-----------------",
 		"1 - Evadir los autos que vienen hacia nosotros",
-		"2 - Sumar la mayor cantidad de puntos (evadiendo) - 10 ptos",
-		"3 - Si colisiona con el enemigo se perderan 30 ptos",
-		"4 - Si se pierden todas las vidas se pierde el juego",
-		"5 - Cada vez que evada 20 obstaculos la velocidad aumentara",	
-		"PRESIONE UNA TECLA PARA INICIAR EL JUEGO"};	
+		"2 - Cada vez que evite 20 obstaculos la velocidad aumentara",
+		"3 - Sumara 10 puntos evadiendo",
+		"4 - Si colisiona con el enemigo perdera 30 ptos",
+		"5 - Si se pierden todas las vidas se pierde el juego",		
+		"6 - Hay autos y un bloque que se mueven en vertical, hay otro auto que se mueve diagonalmente, aparecen al azar",
+		"PRESIONE UNA TECLA PARA INICIAR EL JUEGO"};		
+	
 	/*Muestro los textos*/
 	mostrarTextos(0,3,3, textos);
 	mostrarTextos(3,7,7, textos);
-	mostrarTextos(7,14,12, textos);	
+	mostrarTextos(7,15,12, textos);	
 	/*Espero que presione una tecla para continuar*/
 	while(!kbhit()){		
-		mostrarTextos(14,15,20, textos);			
+		mostrarTextos(15,16,21, textos);			
 		Sleep(500);
 	}	
 }
@@ -137,7 +140,7 @@ void Juego::mostrarTextos(int inicio, int final, int posicion_y, std::string* te
 	for(int i=inicio; i< final; i++){
 		int x= (120/2) - (textos[i].length()/2); //Centramos el texto
 		gotoxy(x,++posicion_y);		
-		std::cout<<textos[i];
+		std::cout<<textos[i];		
 	}
 }
 
