@@ -21,16 +21,16 @@ void Enemigo1::update ( ) {
 		}
 		
 		if(activado) {
-			dibujar();//Dibuja en la pantalla	
-			tempo=clock(); 
+			dibujar();//Dibuja en la pantalla				
 		}		
+		tempo=clock(); 
 	}
 }
 
 /*Método que acelera el paso*/
 void Enemigo1::acelerar(){
 	/*TODO VERIFICAR SI ES MULTIPLO DE 20 y AUMENTAR VELOCIDAD*/
-	velocidad +=1;
+	velocidad +=10;
 	paso=CLOCKS_PER_SEC/velocidad;	
 }
 //Retorna si el enemigo esta activo

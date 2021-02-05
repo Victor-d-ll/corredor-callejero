@@ -17,6 +17,7 @@ private:
 	void capturaEvento();
 	void buclePrincipal();	
 	void chequearColisiones(Movil *enemigo);	
+	void chequearAceleracion();
 	void activarEnemigo(bool hayColision);
 	void aumentarPuntaje();
 	void restarPuntaje();
@@ -32,6 +33,7 @@ private:
 	Movil* enemigo2;
 	Movil* bloque;
 	Pista* pista;	
+	int valorViejo;
 };
 
 #endif

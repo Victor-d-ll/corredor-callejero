@@ -16,7 +16,7 @@ Enemigo2::~Enemigo2() {}
 
 /*Método que acelera el paso*/
 void Enemigo2::acelerar(){
-	velocidad +=1;
+	velocidad +=10;
 	paso=CLOCKS_PER_SEC/velocidad;	
 }
 

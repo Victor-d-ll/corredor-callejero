@@ -8,6 +8,7 @@
 
 /*Constructor*/
 Juego::Juego() {	
+	
 	paredes[0] = new Limites(30,10,1);
 	paredes[1] = new Limites(30,45,75);
 	panel = new Panel();
@@ -20,6 +21,7 @@ Juego::Juego() {
 	enemigo2->setPosicion(35,1);
 	pista = new Pista();
 	activarEnemigo(false);	
+	valorViejo = 0;
 }
 
 /*Destructor*/
@@ -113,14 +115,15 @@ void Juego::mostrarIntro(){
 		"2 - Sumar la mayor cantidad de puntos (evadiendo) - 10 ptos",
 		"3 - Si colisiona con el enemigo se perderan 30 ptos",
 		"4 - Si se pierden todas las vidas se pierde el juego",
+		"5 - Cada vez que evada 20 obstaculos la velocidad aumentara",	
 		"PRESIONE UNA TECLA PARA INICIAR EL JUEGO"};	
 	/*Muestro los textos*/
 	mostrarTextos(0,3,3, textos);
 	mostrarTextos(3,7,7, textos);
-	mostrarTextos(7,13,12, textos);	
+	mostrarTextos(7,14,12, textos);	
 	/*Espero que presione una tecla para continuar*/
 	while(!kbhit()){		
-		mostrarTextos(13,14,19, textos);			
+		mostrarTextos(14,15,20, textos);			
 		Sleep(500);
 	}	
 }
@@ -158,6 +161,16 @@ void Juego::buclePrincipal(){
 		chequearColisiones(enemigo1);	//Método que chequea si los autos chocaron	
 		chequearColisiones(bloque);	//Método que chequea si los autos chocaron	
 		activarEnemigo(false);			//Método que activa a un nuevo enemigo
+		chequearAceleracion();
+	}
+}
+//Método que chequea si hay que acelerar a los moviles
+void Juego::chequearAceleracion(){
+	if(panel->getEvitados()%20==0 && valorViejo!=panel->getEvitados()){	
+		valorViejo = panel->getEvitados();//Fix para evitar que se ejecute multiples veces
+		enemigo1 ->acelerar();
+		enemigo2->acelerar();
+		bloque->acelerar();
 	}
 }
 
@@ -182,10 +195,7 @@ void Juego::chequearColisiones(Movil* enemigo){
 //Método que verifica si el enemigo esta activado o no
 void Juego::activarEnemigo(bool hayColision){	
 	//Si ninguno de los dos enemigos esta activado, se activa alguno al azar
-	if(!enemigo1->getEstaActivo() && !enemigo2->getEstaActivo()&& !bloque->getEstaActivo()){
-		enemigo1 ->acelerar();
-		enemigo2->acelerar();
-		bloque->acelerar();
+	if(!enemigo1->getEstaActivo() && !enemigo2->getEstaActivo()&& !bloque->getEstaActivo()){		
 		if(!hayColision) {		//Si hay colision no aumenta el puntaje
 			aumentarPuntaje();
 		}
