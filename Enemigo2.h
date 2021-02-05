@@ -6,9 +6,9 @@ class Enemigo2 : public Movil {
 public:
 	Enemigo2(int velocidad, int color);	
 	~Enemigo2();
-	void update ( ) override;
-	void setPosicion (int x, int y) override;
-	void kill ( ) override;
+	void update ();
+	void setPosicion (int x, int y);
+	void kill ();
 	void acelerar();
 	void setActivar();	
 	bool getEstaActivo();

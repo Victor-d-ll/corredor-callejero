@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Enemigo1.h"
 #include "Enemigo2.h"
+#include "Bloque.h"
 #include <conio2.h> //gotoxy, textcolor, etc
 #include <windows.h> //En gnu/linux no funcionará
 
@@ -12,7 +13,8 @@ Juego::Juego() {
 	panel = new Panel();
 	player = new Player(10,1);
 	player->setPosicion(35,28);
-	enemigo1 = new Enemigo1(10, 5);
+	//enemigo1 = new Enemigo1(10, 5);
+	enemigo1 = new Bloque(10, 5);
 	enemigo1->setPosicion(35,1);
 	enemigo2 = new Enemigo2(10, rand()%15);
 	enemigo2->setPosicion(35,1);
@@ -168,7 +170,7 @@ void Juego::chequearColisiones(Movil* enemigo){
 		Sleep(1300);
 		enemigo->kill();		
 		player->kill();
-		activarEnemigo(true);
+		activarEnemigo(true);	//Se activa el enemigo de manera que no lanza activarEnemigo()
 		restarPuntaje();
 	}									 
 }
@@ -179,7 +181,7 @@ void Juego::activarEnemigo(bool hayColision){
 	if(!enemigo1->getEstaActivo() && !enemigo2->getEstaActivo()){
 		enemigo1 ->acelerar();
 		enemigo2->acelerar();
-		if(!hayColision) {
+		if(!hayColision) {		//Si hay colision no aumenta el puntaje
 			aumentarPuntaje();
 		}
 		int opcion = rand()%100;		
