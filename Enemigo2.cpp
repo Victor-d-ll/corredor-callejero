@@ -56,9 +56,9 @@ void Enemigo2::update ( ) {
 			
 			/*Si esta activado dibuja en pantalla y mide el tiempo*/
 			if(activado) {
-				dibujar();//Dibuja en la pantalla		
-				tempo=clock(); 
-			}			
+				dibujar();//Dibuja en la pantalla					
+			}	
+			tempo=clock(); 
 		}	
 	}
 }
