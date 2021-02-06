@@ -14,10 +14,10 @@ Juego::Juego() {
 	panel = new Panel();
 	player = new Player(10,1);
 	player->setPosicion(35,28);
-	enemigo1 = new Enemigo1(10, 5);	
+	enemigo1 = new Enemigo1(10, 14);	
 	enemigo1->setPosicion(35,1);
-	bloque = new Bloque(10, 5);
-	enemigo2 = new Enemigo2(10, rand()%15);
+	bloque = new Bloque(10, 15);
+	enemigo2 = new Enemigo2(10, 11); //CAMBIE EL ROJO POR EL CYAN PARA MEJOR VISUALIZACIÖN
 	enemigo2->setPosicion(35,1);
 	pista = new Pista();
 	activarEnemigo(false);	
@@ -92,6 +92,7 @@ void Juego::reiniciarJuego(int opcion){
 	if(opcion==114) {
 		clrscr();
 		player->reiniciarParametros(); //Reactiva al jugador
+		
 		enemigo1->reiniciarParametros();
 		enemigo2->reiniciarParametros();
 		bloque->reiniciarParametros();
@@ -146,7 +147,7 @@ void Juego::mostrarTextos(int inicio, int final, int posicion_y, std::string* te
 
 //Método que limpia el background
 void Juego::limpiar(){
-	textbackground(GREEN);
+	textbackground(GREEN); //Color de fondo de la pista
 	clrscr();	
 }
 
@@ -187,7 +188,7 @@ void Juego::chequearColisiones(Movil* enemigo){
 	   player->getPosicionY() < enemigo->getPosicionY() + 3 &&
 	   player->getPosicionY() + 3 > enemigo->getPosicionY()){
 		/*Si hay colision*/
-		Sleep(1300);
+		Sleep(500);
 		enemigo->kill();		
 		player->kill();
 		activarEnemigo(true);	//Se activa el enemigo de manera que no lanza activarEnemigo()

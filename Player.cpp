@@ -25,7 +25,7 @@ void Player::setActivar() {} //Queda vacío
 /*Se llama para reiniciar al  jugador*/
 void Player::reiniciarParametros(){
 	vidas = 3;
-	x=10;
+	x=35;
 }
 //Si le quedan vidas retorna true
 bool Player::getEstaActivo(){

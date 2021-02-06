@@ -88,9 +88,7 @@ void Enemigo2::borrar(){
 void Enemigo2::reiniciar(){	
 	y=1;
 	activado = false;	
-	color = (COLORES)rand()%15;	
+	//color = (COLORES)rand()%15;	
 	direccion = rand()%100;	
 	borrar();
 }
-
-
