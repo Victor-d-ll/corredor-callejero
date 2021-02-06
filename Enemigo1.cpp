@@ -10,21 +10,15 @@ Enemigo1::~Enemigo1() {}
 
 //Método update del enemigo
 void Enemigo1::update ( ) {
-	if(!activado) {
-		tempo=clock(); 
-		return; //Si no esta activado retorna
-	}
-	if(tempo+paso<clock()){
-		
-		if(y<28) {
-			borrar(); //Borra la pantalla
-			y+=1;	  //Se mueve una posicion
-		}else{		
-			reiniciar();			
-		}
-		
-		if(activado) {
-			dibujar();//Dibuja en la pantalla				
+	if(tempo+paso<clock()){		
+		if(activado) { //Si esta activo
+			if(y<28) {
+				borrar(); //Borra la pantalla
+				y+=1;	  //Se mueve una posicion
+				dibujar();//Dibuja en la pantalla	
+			}else{		
+				reiniciar();			//Si llega al limite inferior 
+			}						
 		}		
 		tempo=clock(); 
 	}

@@ -30,41 +30,27 @@ void Enemigo2::setActivar(){
 }
 //Método update
 void Enemigo2::update ( ) {
-//	if(!activado) {
-//		return; //Si no esta activado retorna
-//	}else{}
-		if(tempo+paso<clock()) {			
-			if(!activado) {
-				tempo=clock(); 
-				return; //Si no esta activado retorna
-			}
-			
-			borrar();	//Borra 
-			
+	
+	if(tempo+paso<clock()) {				
+		if(activado){
+			borrar();	//Borra 				
 			/*Va hacia abajo*/
 			if(y<28) {//Sino toca el limite inferior				
 				y+=1;	  //Se mueve una posicion
+				/*Va hacia derecha o izquierda*/
+				if(direccion%2==0) { //Se mueve a la izquierda			
+					if(x>11) x -=1;					
+				}else{		//Se mueve a la derecha
+					//reiniciar();	
+					if(x<70) x +=1;	
+				}	
+				dibujar();//Dibuja en la pantalla		
 			}else{			
 				reiniciar();				
-			}
-			
-			/*Va hacia derecha o izquierda*/
-			if(direccion%2==0) { //Se mueve a la izquierda			
-				if(x>11) {				
-					x -=1;	
-				}
-			}else{		//Se mueve a la derecha
-				//reiniciar();	
-				if(x<70) x +=1;	
-			}	
-			
-			/*Si esta activado dibuja en pantalla y mide el tiempo*/
-			if(activado) {
-				dibujar();//Dibuja en la pantalla					
-			}	
-			tempo=clock(); 
-		}	
-	
+			}				
+			tempo=clock(); 				
+		}
+	}		
 }
 
 //Método para setear la posicion
