@@ -1,6 +1,8 @@
 #ifndef LIMITES_H
 #define LIMITES_H
 
+/*Clase que dibuja los bloques verdes que se encuentran a la derecha y a la
+  izquierda de la pista*/
 class Limites {
 public:
 	Limites();

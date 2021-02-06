@@ -1,7 +1,9 @@
 #ifndef ENEMIGO1_H
 #define ENEMIGO1_H
 #include "Movil.h"
-
+/*Clase que determina el comportamiento del enemigo que va en diagonal.
+Hereda desde movil, como varios de sus miembros son virtuales se redefinen
+en la presente clase*/
 class Enemigo1 : public Movil {
 public:
 	Enemigo1(int velocidad, int color);	

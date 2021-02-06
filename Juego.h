@@ -5,7 +5,8 @@
 #include "Movil.h"
 #include "Pista.h"
 #include <iostream>
-
+/*Esta es la clase que contiene al juego, su bucle principal, y metodos param_type
+detectar colisiones, perdidas de vidas, principio y final del mismo*/
 class Juego {
 public:
 	Juego();
@@ -26,6 +27,7 @@ private:
 	void mostrarOutro();
 	void dibujarParedes();
 	void reiniciarJuego(int opcion);
+	//Variables
 	Panel* panel;
 	Limites*  paredes[2];
 	Movil* player;

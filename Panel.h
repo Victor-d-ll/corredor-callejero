@@ -1,9 +1,7 @@
-#include <ctime>
-
 #ifndef PANEL_H
 #define PANEL_H
-
-
+#include <ctime>
+/*Esta clase representa el panel con el puntaje*/
 class Panel {
 public:
 	Panel();

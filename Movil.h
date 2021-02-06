@@ -1,7 +1,10 @@
 #ifndef MOVIL_H
 #define MOVIL_H
 #include <ctime>
-
+/*Es la clase base, en ella están los métodos comunes a todas las derivadas.
+  Aquellos que están definidos como virtuales serán implementados en las clases
+  derivadas (está pensado para realizar un polimorfismo)
+*/
 class Movil {
 public:
 	

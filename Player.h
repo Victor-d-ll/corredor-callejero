@@ -2,6 +2,8 @@
 #define PLAYER_H
 #include "Movil.h"
 #include <ctime>
+
+/*Esta clase, que hereda desde Movil, define el comportamiento del jugador*/
 class Player : public Movil {
 public:
 	Player();
@@ -15,7 +17,7 @@ public:
 	void reiniciarParametros();
 private:	
 	void capturarEntrada();
-	int vidas;	
+	int vidas;	//Vidas del jugador
 };
 
 #endif
