@@ -10,10 +10,13 @@ Enemigo1::~Enemigo1() {}
 
 //Método update del enemigo
 void Enemigo1::update ( ) {
-	if(!activado) return; //Si no esta activado retorna
+	if(!activado) {
+		tempo=clock(); 
+		return; //Si no esta activado retorna
+	}
 	if(tempo+paso<clock()){
 		
-		if(y!=28) {
+		if(y<28) {
 			borrar(); //Borra la pantalla
 			y+=1;	  //Se mueve una posicion
 		}else{		
@@ -28,9 +31,8 @@ void Enemigo1::update ( ) {
 }
 
 /*Método que acelera el paso*/
-void Enemigo1::acelerar(){
-	/*TODO VERIFICAR SI ES MULTIPLO DE 20 y AUMENTAR VELOCIDAD*/
-	velocidad +=10;
+void Enemigo1::acelerar(){	
+	velocidad +=5;
 	paso=CLOCKS_PER_SEC/velocidad;	
 }
 //Retorna si el enemigo esta activo

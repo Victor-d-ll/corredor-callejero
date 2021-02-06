@@ -4,8 +4,7 @@
 #include <cstdlib>
 
 //Constructor
-Enemigo2::Enemigo2(int velocidad, int color) : Movil(velocidad, color) {
-	
+Enemigo2::Enemigo2(int velocidad, int color) : Movil(velocidad, color) {	
 	this->color = color;
 	activado = false;	//Por defecto no está activado
 	direccion = rand()%100;
@@ -16,7 +15,7 @@ Enemigo2::~Enemigo2() {}
 
 /*Método que acelera el paso*/
 void Enemigo2::acelerar(){
-	velocidad +=10;
+	velocidad +=5;
 	paso=CLOCKS_PER_SEC/velocidad;	
 }
 
@@ -31,14 +30,19 @@ void Enemigo2::setActivar(){
 }
 //Método update
 void Enemigo2::update ( ) {
-	if(!activado) {
-		return; //Si no esta activado retorna
-	}else{
-		if(tempo+paso<clock()) {
+//	if(!activado) {
+//		return; //Si no esta activado retorna
+//	}else{}
+		if(tempo+paso<clock()) {			
+			if(!activado) {
+				tempo=clock(); 
+				return; //Si no esta activado retorna
+			}
+			
 			borrar();	//Borra 
 			
 			/*Va hacia abajo*/
-			if(y!=28) {//Sino toca el limite inferior				
+			if(y<28) {//Sino toca el limite inferior				
 				y+=1;	  //Se mueve una posicion
 			}else{			
 				reiniciar();				
@@ -46,12 +50,12 @@ void Enemigo2::update ( ) {
 			
 			/*Va hacia derecha o izquierda*/
 			if(direccion%2==0) { //Se mueve a la izquierda			
-				if(x!=11) {				
+				if(x>11) {				
 					x -=1;	
 				}
 			}else{		//Se mueve a la derecha
 				//reiniciar();	
-				if(x!=70) x +=1;	
+				if(x<70) x +=1;	
 			}	
 			
 			/*Si esta activado dibuja en pantalla y mide el tiempo*/
@@ -60,7 +64,7 @@ void Enemigo2::update ( ) {
 			}	
 			tempo=clock(); 
 		}	
-	}
+	
 }
 
 //Método para setear la posicion
